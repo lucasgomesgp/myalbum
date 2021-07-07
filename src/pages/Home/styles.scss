@@ -1,0 +1,19 @@
+.choices{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: calc(100vh - 48px);
+    .post{
+        background-color: #3AE937;
+    }
+    .photo{
+        background-color: #3D51D7;
+    }
+    section{
+        padding: 40px;
+        cursor: pointer;
+        h2{
+            color: #FFFFFF;
+        }
+    }
+}

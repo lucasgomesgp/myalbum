@@ -1,0 +1,21 @@
+@mixin input {
+    width: 250px;
+    height: 54px;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4);
+    padding-left: 10px;
+    font-size: 20px;
+    
+    &::placeholder{
+        font-weight: bold;
+    }
+}
+.input{
+    @include input;
+}
+
+.inputBg{
+    @include input;
+    width: 44%;
+}

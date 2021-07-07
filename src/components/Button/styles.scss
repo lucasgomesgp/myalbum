@@ -1,0 +1,46 @@
+@mixin buttonConfig {
+    width: 210px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    color: #FFFFFF;
+    background-color: #000000;
+    border-radius: 8px;
+    transition: filter .2s;
+
+    &:hover{
+        filter: brightness(0.8);
+    }
+}
+
+.button{
+    @include buttonConfig;
+}
+
+.login{
+    background-color: #222B65;
+}
+
+.google{
+    background-color: #69235B;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    img{
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        background-color: #FFFFFF;
+        border-right: 4px solid #000000;
+        padding: 5px 2px;
+    }
+}
+
+.cancel{
+    background-color: #DF212B;
+}
+
+.success{
+    background-color: #259123;
+}

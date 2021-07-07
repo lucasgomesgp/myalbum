@@ -1,0 +1,34 @@
+.photo-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    align-items: center;
+}
+
+.title{
+    background-color: #3D51D7;
+    color: #FFFFFF;
+    padding: 20px 30%;
+    display: flex;
+}
+
+#photoFile{
+    width: 100%;
+    padding: 40px 0px;
+    text-align: center;
+}
+
+.photo-area{
+   width: 71.2%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   
+   label{
+       margin-top: 10%;
+   }
+}
+
+.success{
+    margin-top: 10px;
+}

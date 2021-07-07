@@ -1,9 +1,21 @@
 import React from 'react';
+import { Login } from './pages/Login';
+import { SignUp } from './pages/SignUp';
+import { AuthContextProvider } from './contexts/AuthContextProvider';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./styles/styles.scss";
 
 function App() {
   return (
-    <h1>Hello World!</h1>
+    <AuthContextProvider>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route path="/user/signup" component={SignUp} />
+        </Switch>
+      </BrowserRouter>
+
+    </AuthContextProvider>
   );
 }
 

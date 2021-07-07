@@ -1,0 +1,20 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    gap: 50px;
+
+    .names{
+        display: flex;
+        gap: 100px;
+    }
+    .buttons{
+        display: flex;
+        gap: 40px;
+    }
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
