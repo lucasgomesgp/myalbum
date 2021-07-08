@@ -1,5 +1,5 @@
 @mixin input {
-    width: 250px;
+    width: 350px;
     height: 54px;
     border-radius: 8px;
     outline: none;
@@ -17,5 +17,5 @@
 
 .inputBg{
     @include input;
-    width: 44%;
+    width: 54%;
 }

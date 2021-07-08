@@ -4,7 +4,7 @@ import { firebase, auth } from "../services/firebase";
 type User = {
     id: string;
     name: string;
-    avatar: string;
+    avatar: string | null;
     email: string;
 }
 
@@ -20,7 +20,7 @@ export const AuthContext = createContext({} as AuthContextType);
 
 export function AuthContextProvider(props: AuthContextProps) {
     const [user, setUser] = useState<User>();
-   
+
     useEffect(() => {
         const unsbscribe = auth.onAuthStateChanged((user) => {
             if (user) {
@@ -37,9 +37,9 @@ export function AuthContextProvider(props: AuthContextProps) {
                 });
             }
         });
-        return () =>{
+        return () => {
             unsbscribe();
-        } 
+        }
     }, []);
 
     async function signInWithGoogle() {
@@ -50,7 +50,7 @@ export function AuthContextProvider(props: AuthContextProps) {
             const { uid, displayName, photoURL, email } = result.user;
             console.log(uid, displayName, photoURL, email);
 
-            if (!displayName || !photoURL || !email) {
+            if (!displayName || !email) {
                 throw new Error("Missing information from Google Account");
             }
 
@@ -63,6 +63,7 @@ export function AuthContextProvider(props: AuthContextProps) {
         }
 
     }
+
     return (
         <AuthContext.Provider value={{ user, signInWithGoogle }}>
             {props.children}

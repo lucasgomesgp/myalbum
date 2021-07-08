@@ -29,5 +29,8 @@
     
     textarea{
         width: 100%;
+        &::placeholder{
+            font-size: 24px;
+        }
     }
 }

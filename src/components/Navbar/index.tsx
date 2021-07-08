@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { Link } from "react-router-dom";
 import logoImg from "../../assets/images/MyAlbum.svg";
 import "./styles.scss";
 
@@ -10,9 +9,7 @@ export function Navbar({ children }: NavbarProps) {
     return (
         <header>
             <div className="logo">
-                <Link to="/">
-                    <img src={logoImg} alt="Logo MyAlbum" />
-                </Link>
+                <img src={logoImg} alt="Logo MyAlbum" />
             </div>
             <div className="nav">
                 <ul>

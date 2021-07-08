@@ -7,11 +7,22 @@ form{
 
     .names{
         display: flex;
-        gap: 100px;
+        gap: 50px;
     }
-    .buttons{
+    .info-user{
         display: flex;
         gap: 40px;
+        flex-direction: column;
+        
+        .inputBg{
+            width: 760px;    
+        }
+    }
+    .buttons{
+        gap: 40px;
+        .success{
+            margin-left: 40px;
+        }
     }
 }
 a{
