@@ -1,18 +1,23 @@
-.container-post{
+.container-post {
     display: flex;
     margin-top: 2%;
     flex-direction: column;
-    border: 1px solid #CCCCCC;
-    width: 70%;    
+    border: 1px solid #cccccc;
+    width: 70%;
     height: 150px;
-    h1{
-        background-color: #3D51D7;
-        color: #FFFFFF;
-        padding-left:20px ;
+    h1 {
+        background-color: #3d51d7;
+        color: #ffffff;
+        padding-left: 20px;
     }
-    h3{
-        padding-left:20px ;
-        font-size: 14px;
+    .content-text {
+        display: flex;
         overflow-y: scroll;
+        position: relative;
+        h3 {
+            padding-left: 20px;
+            font-size: 14px;
+            width: 90%;
+        }
     }
 }

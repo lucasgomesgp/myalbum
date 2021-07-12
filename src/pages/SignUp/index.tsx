@@ -68,7 +68,7 @@ export function SignUp() {
             <Navbar>
                 <Link to="/faq">FAQ</Link>
             </Navbar>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="form-signup">
                 <h1>Form Sign Up</h1>
                 <div className="names">
                     <Input type="text" placeholder="Name" {...getFieldProps("name")} />

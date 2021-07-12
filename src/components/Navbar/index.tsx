@@ -12,7 +12,7 @@ export function Navbar({ children }: NavbarProps) {
                 <img src={logoImg} alt="Logo MyAlbum" />
             </div>
             <div className="nav">
-                <ul>
+                <ul className="list">
                     {children}
                 </ul>
             </div>

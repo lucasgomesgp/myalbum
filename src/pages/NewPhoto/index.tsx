@@ -8,7 +8,7 @@ export function NewPhoto() {
     return (
         <>
             <Navbar>
-                <Link to="/user/new">New</Link>
+                <Link to="/user/home">New</Link>
                 <Link to="/user/posts">Posts</Link>
                 <Link to="/user/photos">Photos</Link>
                 <Link to="/user/aboutme">About Me</Link>
