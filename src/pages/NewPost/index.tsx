@@ -31,7 +31,7 @@ export function NewPost() {
                 toast.error("To create a post you must be logged in!", { position: toast.POSITION.TOP_RIGHT })
                 history.push("/")
             } else {
-                const postRef = database.ref("users/posts");
+                const postRef = database.ref("posts");
                 postRef.push({
                     authorId: user.id,
                     title: values.title,

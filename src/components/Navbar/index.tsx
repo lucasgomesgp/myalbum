@@ -9,7 +9,7 @@ type NavbarProps = {
   children?: ReactNode;
 };
 export function Navbar({ children }: NavbarProps) {
-  const { user, logoutGoogle } = useAuth();
+  const { user, logoutGoogle, logoutNormal } = useAuth();
   return (
     <header>
       <div className="logo">
@@ -18,11 +18,23 @@ export function Navbar({ children }: NavbarProps) {
       <div className="nav">
         <ul className="list">
           {children}
-          {user?.avatar ? (
-            <Link to="/" onClick={logoutGoogle}>
-              <img src={leaveImg} alt="Sign out" />
-            </Link>
-          ) : null}
+          {user?.email && user?.password && user.id ?
+            (
+              <Link to="/" onClick={logoutNormal}>
+                <img src={leaveImg} alt="Sign out" />
+              </Link>
+            ) 
+            : null
+            }
+            {
+              user?.avatar && user?.email ?
+              (
+                <Link to="/" onClick={logoutGoogle}>
+                  <img src={leaveImg} alt="Sign out" />
+                </Link>
+              ) :
+              null
+            }
         </ul>
       </div>
     </header>

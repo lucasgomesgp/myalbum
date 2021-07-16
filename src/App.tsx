@@ -9,6 +9,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { Posts } from './pages/Posts';
 import { Photos } from './pages/Photos';
+import { Faq } from './pages/Faq';
 import "./styles/styles.scss";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/user/newphoto" component={NewPhoto} />
           <Route path="/user/posts" component={Posts} />
           <Route path="/user/photos" component={Photos} />
+          <Route path="/faq" component={Faq} />
         </Switch>
       </BrowserRouter>
     </AuthContextProvider>

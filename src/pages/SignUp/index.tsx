@@ -6,13 +6,16 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { database } from "../../services/firebase";
 import { toast } from "react-toastify";
+import { v4 as uuidv4 } from "uuid";
 import "react-toastify/dist/ReactToastify.css";
 import "./styles.scss";
 
 type InputsTypes = {
+    id: string;
     name: string;
     lastName: string;
     email: string;
+    avatar: string;
     password: string;
 }
 
@@ -21,30 +24,22 @@ export function SignUp() {
 
     const { getFieldProps, handleSubmit } = useFormik<InputsTypes>({
         initialValues: {
+            id: uuidv4(),
             name: "",
             lastName: "",
             email: "",
+            avatar: "",
             password: ""
         },
         validationSchema: Yup.object().shape({
-            name: Yup.string().required(() =>
-                toast.error("Name is required!", { position: toast.POSITION.TOP_RIGHT })
-            ),
-            lastName: Yup.string().required(() =>
-                toast.error("Last name is required!", { position: toast.POSITION.TOP_RIGHT })
-            ),
-            email: Yup.string().email("Email is not valid!").required(() =>
-                toast.error("Email is required!", { position: toast.POSITION.TOP_RIGHT })
-            ),
-            password: Yup.string().min(8, () =>
-                toast.warning("Password must be at least 8 characters", { position: toast.POSITION.TOP_RIGHT }))
-                .required(
-                    () =>
-                        toast.error("Password is required!", { position: toast.POSITION.TOP_RIGHT })
-                )
+            name: Yup.string().required("Name is required!"),
+            lastName: Yup.string().required("Last name is required!"),
+            email: Yup.string().email("Email is not valid!").required("Email is required!" ),
+            password: Yup.string().min(8,"Password must be at least 8 characters").required("Password is required!")
         }),
         onSubmit: (values, formikBag) => {
             database.ref(`/users`).push({
+                id: values.id,
                 name: values.name,
                 lastName: values.lastName,
                 email: values.email,
@@ -52,7 +47,7 @@ export function SignUp() {
             },
                 (error) => {
                     if (!error) {
-                        toast.success("Save with success!", { position: toast.POSITION.TOP_RIGHT });
+                        toast.success("Create with success!", { position: toast.POSITION.TOP_RIGHT });
                         history.push("/");
                     }
                 });

@@ -23,7 +23,7 @@ export function Posts() {
     const history = useHistory();
 
     useEffect(() => {
-        const postRef = database.ref("users/posts");
+        const postRef = database.ref("posts");
 
         postRef.once("value", (post) => {
             const postValue = post.val();
@@ -45,7 +45,7 @@ export function Posts() {
     }, [posts]);
     function handleDelete(id: string) {
         if(window.confirm("Do you really want to delete this post?")){
-            database.ref(`users/posts/${id}`).remove();
+            database.ref(`posts/${id}`).remove();
             toast.success("Delete with success!", { position: toast.POSITION.TOP_RIGHT });
         }
     }
